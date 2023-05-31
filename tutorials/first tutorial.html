@@ -1,0 +1,34 @@
+<h1>Configuración</h1>
+<p>Tutorial de jsdoc, consiste en un modulo para poder documentar una aplicación. 
+    Para instalarlo utilizamos: "npm i jsdoc" y para ejecutarlo tenemos que crear un archivo de configuración 
+    denominado "jsdoc.json" y llamarlo bien desde la consoloa de comandos con la instrucción "npx jsdoc -c jsdoc.json"
+    o bien desde el package.json, creando un script "docs": "jsdoc -c jsdoc.json"
+</p>
+<pre>
+    <code>
+        {
+            "plugins": [],
+            "source": {
+                "include": ["src"],
+                "includePattern": ".js$",
+                "excludePattern": "(node_modules/docs/)"
+            },
+            "templates": {
+                "cleverLinks": false,
+                "monospaceLinks": false
+            },
+            "sourceType": "module",
+            "tags": {
+                "allowUnknownTags": false,
+                "dictionaries": ["jsdoc","closure"]
+            },
+            "opts": {
+                "resource": "true",
+                "destination": "./doc", 
+                "template": "node_modules/docdash",
+                "tutorials": "./tutorials",
+                "readme": "./README.md"
+            }
+        }    
+    </code>
+</pre>
